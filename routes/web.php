@@ -54,3 +54,11 @@ Route::get("/unless", function (){
 //    return view("unless", ["isAdmin" => true]);
     return view("unless", ["isAdmin" => false]);
 });
+
+Route::get("/issetempty", function () {
+    return view("issetempty",
+        [
+            "name" => "budhi",
+//            "hobbies" => ["football"]
+        ]);
+});
