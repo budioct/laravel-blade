@@ -41,3 +41,11 @@ Route::get("/html-endcoding", function(\Illuminate\Http\Request $request){
 Route::get("/disabled-view", function(){
     return view('disabled', ["name" => "budhi"]);
 });
+
+Route::get("/if-statement", function () {
+    return view("if",
+//        ["hobbies" => ["football"]
+            ["hobbies" => ["football", "coding"]
+            //["hobbies" => []
+        ]);
+});
