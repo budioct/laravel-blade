@@ -16,3 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get("/hello", function () {
+    return view("hello", [
+        "name" => "Foo Bar"
+    ]);
+}); // view(name_file_view, array("key"=>"value"))
+
+Route::get("/world", function () {
+    return view("hello.world", [
+        "name" => "Foo Bar Guys"
+    ]);
+}); // view(directory.name_file_view, array("key"=>"value")) // nested view
