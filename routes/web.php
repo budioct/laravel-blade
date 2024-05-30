@@ -44,8 +44,13 @@ Route::get("/disabled-view", function(){
 
 Route::get("/if-statement", function () {
     return view("if",
-//        ["hobbies" => ["football"]
-            ["hobbies" => ["football", "coding"]
-            //["hobbies" => []
+//           ["hobbies" => ["football"]
+        ["hobbies" => ["football", "coding"]
+//           ["hobbies" => []
         ]);
+});
+
+Route::get("/unless", function (){
+//    return view("unless", ["isAdmin" => true]);
+    return view("unless", ["isAdmin" => false]);
 });
