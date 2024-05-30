@@ -37,3 +37,7 @@ Route::get("/html-endcoding", function(\Illuminate\Http\Request $request){
 // note jangan percaya sumber input dari user, jika dari database tidak apa apa
 // http://127.0.0.1:8000/html-endcoding?name=%3Ch3%3Etest%20bro%3C/h3%3E
 // http://127.0.0.1:8000/html-endcoding?name=%3Cscript%3Ealert(%22Anda%20kena%20hack!%22)%3C/script%3E
+
+Route::get("/disabled-view", function(){
+    return view('disabled', ["name" => "budhi"]);
+});
