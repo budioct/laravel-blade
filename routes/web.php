@@ -28,3 +28,12 @@ Route::get("/world", function () {
         "name" => "Foo Bar Guys"
     ]);
 }); // view(directory.name_file_view, array("key"=>"value")) // nested view
+
+Route::get("/html-endcoding", function(\Illuminate\Http\Request $request){
+   return view('html-endcoding', [
+      "name" => $request->input("name"),
+   ]);
+}); // bahansya serangan XSS
+// note jangan percaya sumber input dari user, jika dari database tidak apa apa
+// http://127.0.0.1:8000/html-endcoding?name=%3Ch3%3Etest%20bro%3C/h3%3E
+// http://127.0.0.1:8000/html-endcoding?name=%3Cscript%3Ealert(%22Anda%20kena%20hack!%22)%3C/script%3E
