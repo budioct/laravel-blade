@@ -91,6 +91,16 @@ Route::get("/looping-variable", function () {
     ]);
 });
 
-Route::get("/include", function (){
+Route::get("/include", function () {
     return view("include", []);
+});
+
+Route::get("/form-directive", function () {
+    return view("formdirective", [
+        "user" => [
+            "premium" => true,
+            "name" => "budhi",
+            "admin" => true,
+        ]
+    ]);
 });
