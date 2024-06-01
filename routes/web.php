@@ -68,3 +68,9 @@ Route::get("/switch/{nilai}", function ($nilai) {
         ["value" => $nilai]
     ); // test http: http://localhost:8000/switch/A
 });
+
+Route::get("/for-loop", function (\Illuminate\Http\Request $request) {
+    return view('for', [
+        "limit" => $request->input("limit"),
+    ]); // test http: http://localhost:8000/for-loop?limit=100
+});
