@@ -84,3 +84,9 @@ Route::get("/foreach-loop", function () {
 Route::get("/while-loop", function () {
     return view('while', ["i" => 0]);
 });
+
+Route::get("/looping-variable", function () {
+    return view('loop-variable', [
+        "hobbies" => ["coding", "eating", "running"],
+    ]);
+});
