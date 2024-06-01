@@ -104,3 +104,7 @@ Route::get("/form-directive", function () {
         ]
     ]);
 });
+
+Route::get("/csrf", function (){
+    return view("csrf", []);
+});
