@@ -90,3 +90,7 @@ Route::get("/looping-variable", function () {
         "hobbies" => ["coding", "eating", "running"],
     ]);
 });
+
+Route::get("/include", function (){
+    return view("include", []);
+});
