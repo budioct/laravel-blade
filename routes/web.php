@@ -74,3 +74,9 @@ Route::get("/for-loop", function (\Illuminate\Http\Request $request) {
         "limit" => $request->input("limit"),
     ]); // test http: http://localhost:8000/for-loop?limit=100
 });
+
+Route::get("/foreach-loop", function () {
+    return view('foreach', [
+        "hobbies" => ["coding", "eating", "running"],
+    ]);
+});
