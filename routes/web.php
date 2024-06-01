@@ -29,16 +29,16 @@ Route::get("/world", function () {
     ]);
 }); // view(directory.name_file_view, array("key"=>"value")) // nested view
 
-Route::get("/html-endcoding", function(\Illuminate\Http\Request $request){
-   return view('html-endcoding', [
-      "name" => $request->input("name"),
-   ]);
+Route::get("/html-endcoding", function (\Illuminate\Http\Request $request) {
+    return view('html-endcoding', [
+        "name" => $request->input("name"),
+    ]);
 }); // bahansya serangan XSS
 // note jangan percaya sumber input dari user, jika dari database tidak apa apa
 // http://127.0.0.1:8000/html-endcoding?name=%3Ch3%3Etest%20bro%3C/h3%3E
 // http://127.0.0.1:8000/html-endcoding?name=%3Cscript%3Ealert(%22Anda%20kena%20hack!%22)%3C/script%3E
 
-Route::get("/disabled-view", function(){
+Route::get("/disabled-view", function () {
     return view('disabled', ["name" => "budhi"]);
 });
 
@@ -50,7 +50,7 @@ Route::get("/if-statement", function () {
         ]);
 });
 
-Route::get("/unless", function (){
+Route::get("/unless", function () {
 //    return view("unless", ["isAdmin" => true]);
     return view("unless", ["isAdmin" => false]);
 });
@@ -61,4 +61,10 @@ Route::get("/issetempty", function () {
             "name" => "budhi",
 //            "hobbies" => ["football"]
         ]);
+});
+
+Route::get("/switch/{nilai}", function ($nilai) {
+    return view("switch",
+        ["value" => $nilai]
+    ); // test http: http://localhost:8000/switch/A
 });
