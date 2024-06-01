@@ -80,3 +80,7 @@ Route::get("/foreach-loop", function () {
         "hobbies" => ["coding", "eating", "running"],
     ]);
 });
+
+Route::get("/while-loop", function () {
+    return view('while', ["i" => 0]);
+});
