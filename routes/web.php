@@ -108,3 +108,7 @@ Route::get("/form-directive", function () {
 Route::get("/csrf", function (){
     return view("csrf", []);
 });
+
+Route::get("/template-inheritance", function (){
+    return view("child", []);
+});
